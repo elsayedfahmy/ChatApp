@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".UI.MessageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbar_layout">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MainTheme"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/profile_image_user"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="username"
+                android:textStyle="bold"
+                android:id="@+id/txt_username"
+                android:textColor="#ffffff"
+                />
+        </androidx.appcompat.widget.Toolbar>
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab_layout"
+            android:background="@color/colorPrimaryDark"
+            app:tabTextColor="#ffffff"
+            app:tabSelectedTextColor="#ffffff"
+            app:tabIndicatorColor="#ffffff"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar_layout"
+        android:layout_above="@+id/cardview"
+        android:id="@+id/message_recycle_view"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="2dp"
+        android:id="@id/cardview">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:background="#fff"
+        android:id="@+id/relative_layout"
+        >
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_Mesaage"
+            android:hint="send Message"
+            android:background="@android:color/transparent"
+            android:layout_toLeftOf="@+id/btn_sent"
+            android:layout_centerVertical="true"
+            app:met_floatingLabel="highlight"
+    />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_sent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_send"
+            android:layout_centerVertical="true"
+            />
+
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
